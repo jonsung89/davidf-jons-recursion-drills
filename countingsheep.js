@@ -9,8 +9,6 @@
 
 // countSheeps(3);
 
-
-
 //DOUBLING AN ARRAY
 // function doubleArr(arr) {
 //   if (arr.length === 0) return [];
@@ -18,8 +16,6 @@
 // }
 
 // console.log(doubleArr([1, 2, 3]));
-
-
 
 // Reverse String
 // function reverseString(str) {
@@ -31,8 +27,6 @@
 
 // console.log(reverseString('hello'));
 
-
-
 //nth Triangular Number
 // function triangulerNum(n) {
 //   if (n === 0) return 0;
@@ -41,8 +35,6 @@
 // }
 
 // console.log(triangulerNum(7));
-
-
 
 // String Splitter
 // input: "The quick brown fox jumped over the lazy dog"
@@ -59,7 +51,6 @@
 
 // console.log(stringSplitter('The quick brown fox jumped over the lazy dog', ' '));
 
-
 // function stringSplitter(str, sep) {
 //   if(str.length === 0) return [];
 
@@ -69,9 +60,6 @@
 //   return stringSplitter(str.slice(1), sep);
 // }
 
-
-
-
 // Binary Representation
 // input: 25
 // output: 11001
@@ -80,14 +68,26 @@
 // 3. find a way to represent 0 and 1
 // 4. take the mod by 2 to get 0 and 1
 
-function binaryRep(num) {
-  if(num === 0) {
-    return '';
+// function binaryRep(num) {
+//   if (num === 0) {
+//     return '';
+//   }
+//   const binary = Math.floor(num % 2); // 1s and 0s
+//   // 25 % 2 = 1
+//   // binaryRep(12)
+//   return binaryRep(Math.floor(num / 2)) + binary;
+// }
+
+// console.log(binaryRep(25));
+
+//Factorial
+
+function factorial(n) {
+  if (n === 0) {
+    return 1;
   }
-  const binary = Math.floor( num % 2 ); // 1s and 0s
-  // 25 % 2 = 1
-  // binaryRep(12) 
-  return binaryRep(Math.floor( num/2 )) + binary; 
+
+  return n * factorial(n - 1);
 }
 
-console.log(binaryRep(25));
+console.log(factorial(3));
