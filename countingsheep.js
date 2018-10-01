@@ -214,11 +214,8 @@
 
 // traverseA(doc);
 
-
-
 // Iterative version
 // Solve all the questions above iteratively.
-
 
 // Counting Sheep
 // function countingSheep(num) {
@@ -229,3 +226,10 @@
 
 // countingSheep(3);
 
+//Array Doubling
+
+function doubleArr(arr) {
+  console.log(arr.map(item => item * 2));
+}
+
+doubleArr([1, 2, 3]);
