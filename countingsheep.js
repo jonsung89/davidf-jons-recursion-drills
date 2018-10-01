@@ -228,8 +228,16 @@
 
 //Array Doubling
 
-function doubleArr(arr) {
-  console.log(arr.map(item => item * 2));
+// function doubleArr(arr) {
+//   console.log(arr.map(item => item * 2));
+// }
+
+// doubleArr([1, 2, 3]);
+
+
+// Reverse String
+function reverseString(str) {
+  return str.split('').reverse().join('');
 }
 
-doubleArr([1, 2, 3]);
+console.log(reverseString('hello'));
