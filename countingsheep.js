@@ -257,8 +257,7 @@
 
 // console.log(splitter('The quick brown fox jumped over the lazy dog', ' '));
 
-
-// Binary Representation 
+// Binary Representation
 // function binaryRep(num) {
 //   if (num === 0) {
 //     return '';
@@ -270,20 +269,30 @@
 // }
 // console.log(binaryRep(25));
 
-function dec2bin(dec) {
-  return (dec >>> 0).toString(2); // unsigned right shift bitwise operator
-}
-console.log(dec2bin(25));
-
-
+// function dec2bin(dec) {
+//   return (dec >>> 0).toString(2); // unsigned right shift bitwise operator
+// }
+// console.log(dec2bin(25));
 
 // factorial
-function factorial(n) {
-  let result = 1;
-  for (let i=1; i <= n; i++) {
-    result *= i;
+// function factorial(n) {
+//   let result = 1;
+//   for (let i=1; i <= n; i++) {
+//     result *= i;
+//   }
+//   return result;
+// }
+
+// console.log(factorial(5));
+
+//Fibonacci
+
+function fib(n) {
+  let arr = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    arr.push(arr[i - 2] + arr[i - 1]);
   }
-  return result;
+  return arr[n];
 }
 
-console.log(factorial(5));
+console.log(fib(9));
