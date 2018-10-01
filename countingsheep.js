@@ -156,60 +156,76 @@
 // }
 // console.log(traverse(animalHierarchy, null));
 
-const orgChart = [
-  { name: 'Zuckerberg', parent: null },
-  { name: 'Schroepfer', parent: 'Zuckerberg' },
-  { name: 'Schrage', parent: 'Zuckerberg' },
-  { name: 'Sandberg', parent: 'Zuckerberg' },
-  { name: 'Bosworth', parent: 'Schroepfer' },
-  { name: 'Zhao', parent: 'Schroepfer' },
-  { name: 'Steve', parent: 'Bosworth' },
-  { name: 'Kyle', parent: 'Bosworth' },
-  { name: 'Andra', parent: 'Bosworth' },
-  { name: 'Richie', parent: 'Zhao' },
-  { name: 'Sofia', parent: 'Zhao' },
-  { name: 'Jen', parent: 'Zhao' },
-  { name: 'VanDyck', parent: 'Schrage' },
-  { name: 'Swain', parent: 'Schrage' },
-  { name: 'Sabrina', parent: 'VanDyck' },
-  { name: 'Michelle', parent: 'VanDyck' },
-  { name: 'Josh', parent: 'VanDyck' },
-  { name: 'Blanch', parent: 'Swain' },
-  { name: 'Tom', parent: 'Swain' },
-  { name: 'Joe', parent: 'Swain' },
-  { name: 'Goler', parent: 'Sandberg' },
-  { name: 'Hernandez', parent: 'Sandberg' },
-  { name: 'Moissinac', parent: 'Sandberg' },
-  { name: 'Kelley', parent: 'Sandberg' },
-  { name: 'Eddie', parent: 'Goler' },
-  { name: 'Julie', parent: 'Goler' },
-  { name: 'Annie', parent: 'Goler' },
-  { name: 'Rowi', parent: 'Hernandez' },
-  { name: 'Inga', parent: 'Hernandez' },
-  { name: 'Morgan', parent: 'Hernandez' },
-  { name: 'Amy', parent: 'Moissinac' },
-  { name: 'Chuck', parent: 'Moissinac' },
-  { name: 'Vinni', parent: 'Moissinac' },
-  { name: 'Eric', parent: 'Kelley' },
-  { name: 'Ana', parent: 'Kelley' },
-  { name: 'Wes', parent: 'Kelley' }
-];
+// const orgChart = [
+//   { name: 'Zuckerberg', parent: null },
+//   { name: 'Schroepfer', parent: 'Zuckerberg' },
+//   { name: 'Schrage', parent: 'Zuckerberg' },
+//   { name: 'Sandberg', parent: 'Zuckerberg' },
+//   { name: 'Bosworth', parent: 'Schroepfer' },
+//   { name: 'Zhao', parent: 'Schroepfer' },
+//   { name: 'Steve', parent: 'Bosworth' },
+//   { name: 'Kyle', parent: 'Bosworth' },
+//   { name: 'Andra', parent: 'Bosworth' },
+//   { name: 'Richie', parent: 'Zhao' },
+//   { name: 'Sofia', parent: 'Zhao' },
+//   { name: 'Jen', parent: 'Zhao' },
+//   { name: 'VanDyck', parent: 'Schrage' },
+//   { name: 'Swain', parent: 'Schrage' },
+//   { name: 'Sabrina', parent: 'VanDyck' },
+//   { name: 'Michelle', parent: 'VanDyck' },
+//   { name: 'Josh', parent: 'VanDyck' },
+//   { name: 'Blanch', parent: 'Swain' },
+//   { name: 'Tom', parent: 'Swain' },
+//   { name: 'Joe', parent: 'Swain' },
+//   { name: 'Goler', parent: 'Sandberg' },
+//   { name: 'Hernandez', parent: 'Sandberg' },
+//   { name: 'Moissinac', parent: 'Sandberg' },
+//   { name: 'Kelley', parent: 'Sandberg' },
+//   { name: 'Eddie', parent: 'Goler' },
+//   { name: 'Julie', parent: 'Goler' },
+//   { name: 'Annie', parent: 'Goler' },
+//   { name: 'Rowi', parent: 'Hernandez' },
+//   { name: 'Inga', parent: 'Hernandez' },
+//   { name: 'Morgan', parent: 'Hernandez' },
+//   { name: 'Amy', parent: 'Moissinac' },
+//   { name: 'Chuck', parent: 'Moissinac' },
+//   { name: 'Vinni', parent: 'Moissinac' },
+//   { name: 'Eric', parent: 'Kelley' },
+//   { name: 'Ana', parent: 'Kelley' },
+//   { name: 'Wes', parent: 'Kelley' }
+// ];
 
-function traverse(orgChart, parent) {
-  let node = {};
-  orgChart
-    .filter(item => item.parent === parent)
-    .forEach(item => (node[item.name] = traverse(orgChart, item.name)));
-  return node;
-}
-let doc = traverse(orgChart, null);
+// function traverse(orgChart, parent) {
+//   let node = {};
+//   orgChart
+//     .filter(item => item.parent === parent)
+//     .forEach(item => (node[item.name] = traverse(orgChart, item.name)));
+//   return node;
+// }
+// let doc = traverse(orgChart, null);
 
-function traverseA(doc, depth = 0) {
-  let indent = ' '.repeat(depth * 4);
-  Object.keys(doc).forEach(key => {
-    console.log(indent + key);
-    traverseA(doc[key], depth + 1);
-  });
-}
+// function traverseA(doc, depth = 0) {
+//   let indent = ' '.repeat(depth * 4);
+//   Object.keys(doc).forEach(key => {
+//     console.log(indent + key);
+//     traverseA(doc[key], depth + 1);
+//   });
+// }
 
-traverseA(doc);
+// traverseA(doc);
+
+
+
+// Iterative version
+// Solve all the questions above iteratively.
+
+
+// Counting Sheep
+// function countingSheep(num) {
+//   for (let i = num; i > 0; i--) {
+//     console.log(i + ' - Another sheep jump over the fence');
+//   }
+// }
+
+// countingSheep(3);
+
