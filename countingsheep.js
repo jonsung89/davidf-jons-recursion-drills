@@ -234,10 +234,25 @@
 
 // doubleArr([1, 2, 3]);
 
-
 // Reverse String
-function reverseString(str) {
-  return str.split('').reverse().join('');
-}
+// function reverseString(str) {
+//   return str.split('').reverse().join('');
+// }
 
-console.log(reverseString('hello'));
+// console.log(reverseString('hello'));
+
+//Triangular Number
+
+// function triangulerNum(n) {
+//   return (n * (n + 1)) / 2;
+// }
+
+// console.log(triangulerNum(9));
+
+//String Splitter
+
+// function splitter(str, sep) {
+//   return str.split(sep);
+// }
+
+// console.log(splitter('The quick brown fox jumped over the lazy dog', ' '));
