@@ -11,9 +11,20 @@
 
 //DOUBLING AN ARRAY
 
-function doubleArr(arr) {
-  if (arr.length === 0) return [];
-  return [arr[0] * 2, ...doubleArr(arr.slice(1))];
+// function doubleArr(arr) {
+//   if (arr.length === 0) return [];
+//   return [arr[0] * 2, ...doubleArr(arr.slice(1))];
+// }
+
+// console.log(doubleArr([1, 2, 3]));
+
+// Reverse String
+function reverseString(str) {
+  if (str.length === 0) return '';
+  const newChar = str.slice(-1);
+
+  return newChar + reverseString(str.slice(0,-1));
 }
 
-console.log(doubleArr([1, 2, 3]));
+console.log(reverseString('hello'));
+
