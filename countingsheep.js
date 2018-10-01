@@ -19,12 +19,21 @@
 // console.log(doubleArr([1, 2, 3]));
 
 // Reverse String
-function reverseString(str) {
-  if (str.length === 0) return '';
-  const newChar = str.slice(-1);
+// function reverseString(str) {
+//   if (str.length === 0) return '';
+//   const newChar = str.slice(-1);
 
-  return newChar + reverseString(str.slice(0,-1));
+//   return newChar + reverseString(str.slice(0,-1));
+// }
+
+// console.log(reverseString('hello'));
+
+//nth Triangular Number
+
+function triangulerNum(n) {
+  if (n === 0) return 0;
+
+  return n + triangulerNum(n - 1);
 }
 
-console.log(reverseString('hello'));
-
+console.log(triangulerNum(7));
