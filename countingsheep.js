@@ -80,9 +80,6 @@
 
 // console.log(binaryRep(25));
 
-
-
-
 //Factorial
 
 // function factorial(n) {
@@ -93,10 +90,7 @@
 //   return n * factorial(n - 1);
 // }
 
-// console.log(factorial(3));
-
-
-
+// console.log(factorial(5));
 
 // Fibonacci
 // input: 7
@@ -109,17 +103,35 @@
 
 //   return fib(num-1) + fib(num-2);
 // }
-console.log(fib(10));
+// console.log(fib(10));
 
 // much faster using memo
-function fib(num, memo) {
-  memo = memo || {};
-  if (memo[num]) return memo[num];
-  if (num <= 1) {
-    return num;
+// function fib(num, memo) {
+//   memo = memo || {};
+//   if (memo[num]) return memo[num];
+//   if (num <= 1) {
+//     return num;
+//   }
+//   return memo[num] = fib(num - 1, memo) + fib(num - 2, memo);
+// }
+
+//Anagrams
+
+function anagram(str) {
+  if (str.length < 2) return str;
+
+  let results = [];
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+
+    if (str.indexOf(char) != i) continue;
+
+    let remainingStr = str.slice(0, i) + str.slice(i + 1, str.length);
+
+    for (let subResults of anagram(remainingStr))
+      results.push(char + subResults);
   }
-  return memo[num] = fib(num - 1, memo) + fib(num - 2, memo);
+  return results;
 }
 
-
-
+console.log(anagram('supercalifragilisticexpialidocious'));
