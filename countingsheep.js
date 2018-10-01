@@ -214,6 +214,9 @@
 
 // traverseA(doc);
 
+
+
+
 // Iterative version
 // Solve all the questions above iteratively.
 
@@ -285,14 +288,71 @@
 
 // console.log(factorial(5));
 
-//Fibonacci
 
-function fib(n) {
-  let arr = [0, 1];
-  for (let i = 2; i <= n; i++) {
-    arr.push(arr[i - 2] + arr[i - 1]);
-  }
-  return arr[n];
+
+//Fibonacci
+// function fib(n) {
+//   let arr = [0, 1];
+//   for (let i = 2; i <= n; i++) {
+//     arr.push(arr[i - 2] + arr[i - 1]);
+//   }
+//   return arr[n];
+// }
+
+// console.log(fib(9));
+
+
+// Anagram
+function swap(chars, i, j) {
+  var tmp = chars[i];
+  chars[i] = chars[j];
+  chars[j] = tmp;
 }
 
-console.log(fib(9));
+function getAnagrams(input) {
+  let counter = [],
+    anagrams = [],
+    chars = input.split(''),
+    length = chars.length,
+    i;
+
+  for (i = 0; i < length; i++) {
+    counter[i] = 0;
+  }
+
+  anagrams.push(input);
+  i = 0;
+  while (i < length) {
+    if (counter[i] < i) {
+      swap(chars, i % 2 === 1 ? counter[i] : 0, i);
+      counter[i]++;
+      i = 0;
+      anagrams.push(chars.join(''));
+    } else {
+      counter[i] = 0;
+      i++;
+    }
+  }
+
+  return anagrams;
+}
+
+console.log(getAnagrams('east'));
+
+
+// Animal Hierarchy
+// const animalHierarchy = [
+//   { id: 'Animals', parent: null },
+//   { id: 'Mammals', parent: 'Animals' },
+//   { id: 'Dogs', parent: 'Mammals' },
+//   { id: 'Cats', parent: 'Mammals' },
+//   { id: 'Golden Retriever', parent: 'Dogs' },
+//   { id: 'Husky', parent: 'Dogs' },
+//   { id: 'Bengal', parent: 'Cats' }
+// ];
+
+// function traverse(animalHierarchy, parent) {
+//   let node = {};
+//   animalHierarchy.filter(item => item.parent === parent)
+//     .forEach()
+// }
