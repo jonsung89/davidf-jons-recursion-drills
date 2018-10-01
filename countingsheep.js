@@ -47,21 +47,22 @@
 // String Splitter
 // input: "The quick brown fox jumped over the lazy dog"
 // output: ["The", "quick", "brown", ...]
-function stringSplitter(str, sep) {
-  let index = str.indexOf(sep);
+// function stringSplitter(str, sep) {
+//   let index = str.indexOf(sep);
 
-  if (index === -1) {
-    return str;
-  }
+//   if (index === -1) {
+//     return str;
+//   }
 
-  return [str.slice(0, index)].concat(stringSplitter(str.slice(index + 1), sep));
-}
+//   return [str.slice(0, index)].concat(stringSplitter(str.slice(index + 1), sep));
+// }
 
-console.log(stringSplitter('The quick brown fox jumped over the lazy dog', ' '));
+// console.log(stringSplitter('The quick brown fox jumped over the lazy dog', ' '));
 
 
 // function stringSplitter(str, sep) {
 //   if(str.length === 0) return [];
+
 //   if (str[0] !== sep) {
 //     return [str[0], ...stringSplitter(str.slice(1), sep)];
 //   }
