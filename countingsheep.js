@@ -80,14 +80,46 @@
 
 // console.log(binaryRep(25));
 
+
+
+
 //Factorial
 
-function factorial(n) {
-  if (n === 0) {
-    return 1;
-  }
+// function factorial(n) {
+//   if (n === 0) {
+//     return 1;
+//   }
 
-  return n * factorial(n - 1);
+//   return n * factorial(n - 1);
+// }
+
+// console.log(factorial(3));
+
+
+
+
+// Fibonacci
+// input: 7
+// output: 13
+// 1 1 2 3 5 8 13
+// function fib(num) {
+//   if (num <= 1) {
+//     return num;
+//   }
+
+//   return fib(num-1) + fib(num-2);
+// }
+console.log(fib(10));
+
+// much faster using memo
+function fib(num, memo) {
+  memo = memo || {};
+  if (memo[num]) return memo[num];
+  if (num <= 1) {
+    return num;
+  }
+  return memo[num] = fib(num - 1, memo) + fib(num - 2, memo);
 }
 
-console.log(factorial(3));
+
+
