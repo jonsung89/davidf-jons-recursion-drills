@@ -115,23 +115,48 @@
 //   return memo[num] = fib(num - 1, memo) + fib(num - 2, memo);
 // }
 
+
+
 //Anagrams
 
-function anagram(str) {
-  if (str.length < 2) return str;
+// function anagram(str) {
+//   if (str.length < 2) return str;
 
-  let results = [];
-  for (let i = 0; i < str.length; i++) {
-    let char = str[i];
+//   let results = [];
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i];
 
-    if (str.indexOf(char) != i) continue;
+//     if (str.indexOf(char) !== i) continue;
 
-    let remainingStr = str.slice(0, i) + str.slice(i + 1, str.length);
+//     let remainingStr = str.slice(0, i) + str.slice(i + 1, str.length);
 
-    for (let subResults of anagram(remainingStr))
-      results.push(char + subResults);
-  }
-  return results;
-}
+//     for (let subResults of anagram(remainingStr))
+//       results.push(char + subResults);
+//   }
+//   return results;
+// }
 
-console.log(anagram('supercalifragilisticexpialidocious'));
+// console.log(anagram('super'));
+
+
+
+
+// Animal Hierarchy
+// const animalHierarchy = [
+//   { id: 'Animals', parent: null },
+//   { id: 'Mammals', parent: 'Animals' },
+//   { id: 'Dogs', parent: 'Mammals' },
+//   { id: 'Cats', parent: 'Mammals' },
+//   { id: 'Golden Retriever', parent: 'Dogs' },
+//   { id: 'Husky', parent: 'Dogs' },
+//   { id: 'Bengal', parent: 'Cats' }
+// ]
+
+// // ==============================
+// function traverse(animalHierarchy, parent) {
+//   let node = {};
+//   animalHierarchy.filter(item => item.parent === parent)
+//     .forEach(item => node[item.id] = traverse(animalHierarchy, item.id));
+//   return node;
+// }
+// console.log(traverse(animalHierarchy, null));
