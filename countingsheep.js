@@ -256,3 +256,34 @@
 // }
 
 // console.log(splitter('The quick brown fox jumped over the lazy dog', ' '));
+
+
+// Binary Representation 
+// function binaryRep(num) {
+//   if (num === 0) {
+//     return '';
+//   }
+//   const binary = Math.floor(num % 2); // 1s and 0s
+//   // 25 % 2 = 1
+//   // binaryRep(12)
+//   return binaryRep(Math.floor(num / 2)) + binary;
+// }
+// console.log(binaryRep(25));
+
+function dec2bin(dec) {
+  return (dec >>> 0).toString(2); // unsigned right shift bitwise operator
+}
+console.log(dec2bin(25));
+
+
+
+// factorial
+function factorial(n) {
+  let result = 1;
+  for (let i=1; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
+
+console.log(factorial(5));
